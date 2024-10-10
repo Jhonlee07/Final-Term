@@ -65,7 +65,44 @@ for (int i = 0; i < grades.length; i++){
     
 }
 
-     System.out.println("Well Done!");  
+     System.out.println("\nWell Done!");  
+
+        
+
+        double maxGrade = grades[0];
+        double minGrade = grades[0];
+        String maxSubject = subjects[0];
+        String minSubject = subjects[0];
+
+        for (int i = 0; i < grades.length; i++)
+        {
+          if (grades [i] > maxGrade){
+            maxGrade = grades[i];
+            maxSubject = subjects[i];
+          }
+
+        }
+
+
+        System.out.println("\nHighest grade: " + maxSubject + " : " + maxGrade);
+
+
+        for (int i = 0; i < grades.length; i++){
+            if (grades[i] < minGrade){
+                minGrade = grades[i];
+                minSubject = subjects[i];
+
+            }
+        }
+
+        System.out.println("\nLowest grade: " + minSubject + " : " + minGrade);
+
+        System.out.println("\nCourses with grades below 2.0");
+        for (int i = 0; i < subjects.length; i++){
+           if (grades[i] < 2){
+               System.out.println(subjects[i] + " : " + grades[i]);
+           }
+        }
 
      scanner.close();
    }
